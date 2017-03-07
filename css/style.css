@@ -1,0 +1,91 @@
+
+body{
+	
+	background: #374046;
+	padding: 24pt;
+
+	color: #0F0F0F;
+	
+	font-family: "Roboto", "Helvetica Neue", Helvetica, Arial, sans-serif;
+font-weight: 300;
+}
+
+.mainForm{
+	background-color: #03A9F4;
+	color: #FFF;
+	 
+        width: 500px;
+        clear: both;
+
+}
+
+.mainForm input {
+        width: 20%;
+        clear: both;
+    }
+
+.mainForm label {
+	width: 70%;
+        clear: both;
+        display: inline-block;
+
+        text-align: right;
+    }
+
+#result{
+	background: #FFF;
+	margin: 12pt 0pt;
+}
+
+#mainData > label, input{
+
+    padding: 5px 0px;
+	margin: 6px 0px;
+}
+
+.tbMonth tbody tr:hover, .tbYear tbody tr:hover{
+	/*background-color: #f1f1f1;*/
+	background-color: #455A64;
+	color: #FFF;
+
+}
+
+.tbMonth, .tbYear{
+	border: none;
+	border-collapse: collapse;
+}
+
+.tbMonth tbody tr>td, .tbYear tbody tr td{
+    padding: 4px;
+    text-align: center;
+	font-size: 11pt;
+    
+}
+
+.montly{
+    background-color: #f1f1f1;
+    padding: 0.01em 16px;
+    
+}
+
+.center{
+	margin: auto;
+    width: 50%;
+    
+    padding: 10px;
+}
+
+.shadow{
+	box-shadow: 0 3px 10px rgba(0, 0, 0, 0.23), 0 3px 10px rgba(0, 0, 0, 0.16);
+}
+
+.thead{
+	text-align: center;
+	background: #8bc34a;
+	font-size: 12pt;
+
+}
+.thead tr td{
+	padding: 3pt 10pt;
+
+}
