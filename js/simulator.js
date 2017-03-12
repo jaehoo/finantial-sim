@@ -14,6 +14,10 @@ SIM.calculate = function () {
     var tasa = $('#mainData input[name="tasa"]');
     var anualSaving = $('#mainData input[name="anualSaving"]');
     var taxes = $('#mainData input[name="taxes"]');
+
+    
+    var inflation= $('#inflacion');
+    //console.log(inflation);
  
     var inputData = {
         'age': age.val(),
@@ -22,7 +26,8 @@ SIM.calculate = function () {
         'tasa': tasa.val(),
         'montlySaving': montlySaving.val(),
         'anualSaving':anualSaving.val(),
-        'taxes':taxes.val()
+        'taxes':taxes.val(),
+        'inflation': inflation.val()
  
  
     };
@@ -36,7 +41,7 @@ SIM.calculate = function () {
     ,['Mes','Saldo Inicial', 'Rendimiento','Ahorro mensual', 'impuestos','Saldo Final']);
  
      SIM.drawTable( data.year ,'#result .year','tbYear'
-    ,['Edad', 'Saldo Inicial', 'Ahorro Anual', 'Ingreso Pasivo', 'Impuestos','Saldo final', 'Aportación Anual']);
+    ,['Edad', 'Saldo Inicial', 'Ahorro Anual', 'Ingreso Pasivo', 'Impuestos','Saldo final', 'Aportación Anual','Total', 'Inflación']);
     // [ [ 1, 2, 3 ,4], [ 3,4, 5, 6 ], [3,7, 8, 9 ] ];
  
    /* var html = '<table class="tbMonth"><thead><tr>...</tr></thead><tbody>';
@@ -62,10 +67,12 @@ SIM.monthly = function (data) {
     var montlySaving = parseFloat(data.montlySaving);
     var formattedSaving= accounting.formatMoney(data.montlySaving);
     var anualSaving = parseFloat(data.anualSaving);
-    var taxes = parseFloat(data.taxes);
+    var taxes = ((parseFloat(data.taxes))/100);
+    var inflation = parseFloat(data.inflation)/100;
  
     var yearResult =[];
     rowYear = [];
+    var tasa = ((data.tasa / 100)/364) * 28;
  
     var edad = parseFloat(data.age);
     for (i = 0; i < data.yearsToWork; i++) {
@@ -77,6 +84,7 @@ SIM.monthly = function (data) {
         var sumSaving = 0;
         var sumProfit = 0;
         var sumtax = 0;
+        var sumInlfation = 0;
         var total;
         
         var lastSaving =  inc;
@@ -84,11 +92,13 @@ SIM.monthly = function (data) {
         for (j = 1; j <= MONTHS; j++) {
  
             var row = [];
-            var profit = parseFloat(inc * data.tasa);
+            var profit = parseFloat(inc * tasa);
             var tax = profit*taxes;
             sumSaving += montlySaving;
             sumProfit += parseFloat(profit);
             sumtax += tax;
+            //sumInlfation += sumInlfation + ;
+
             
             //var monProfit= (inc + profit + data.montlySaving);
             //row.push(inc + profit + data.montlySaving);
@@ -117,11 +127,17 @@ SIM.monthly = function (data) {
         rowYear.push(accounting.formatMoney(sumtax, {  format: "%s (%v)" }));
         rowYear.push(accounting.formatMoney(total));
         rowYear.push(accounting.formatMoney(anualSaving));
- 
-        yearResult.push(rowYear);
-        rowYear = [];
+
         inc = inc+ anualSaving;
+        rowYear.push(accounting.formatMoney(inc));
+        rowYear.push(accounting.formatMoney((inc* inflation), {  format: "%s (%v)" }));
+                
+        yearResult.push(rowYear);
+
+        rowYear = [];
         j = 0;
+        
+        //sumInlfation =0;
  
     }
  

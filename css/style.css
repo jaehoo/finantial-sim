@@ -70,7 +70,7 @@ font-weight: 300;
 
 .center{
 	margin: auto;
-    width: 50%;
+    width: 65%;
     
     padding: 10px;
 }
@@ -86,6 +86,6 @@ font-weight: 300;
 
 }
 .thead tr td{
-	padding: 3pt 10pt;
+	padding: 3pt 14pt;
 
 }

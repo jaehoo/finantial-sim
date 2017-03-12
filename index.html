@@ -6,72 +6,84 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link href="css/style.css" rel="stylesheet">
+    <link href="css/w2ui-1.5.rc1.min.css" rel="stylesheet">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
     <script src="js/simulator.js"></script>
     <script src="js/accounting.min.js"></script>
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+    <script src="js/w2ui-1.5.rc1.min.js"></script>
+    
 </head>
 
 <body>
 
-<div >
+    <div>
 
-    <div class="mainForm center shadow">
+        <div class="mainForm center shadow w2ui-page">
 
-        <form id="mainData">
-            <label for="name">Nombre:</label>
-            <input type="text" name="name">
-            <br>
-            <label for="age">Edad:</label>
-            <input type="number" name="age" value="" required/>
-            <br>
-            <label for="saving">¿cuanto dinero tienes ahorrado?</label>
-            <input type="number" name="saving" value="" step="any" required>
-            <br>
-            <label for="montlySaving">¿cuanto puedes ahorrar mensualmente?</label>
-            <input type="number" name="montlySaving" step="any" required>
-            <br>
-            <label for="working">¿Cuantos años estimas trabajar?</label>
-            <input type="number" name="working"     required>
-            <br>
-            <label for="anualSaving">¿Puedes dar una aportanci&oacuten a fin de año (cuanto)?</label>
-            <input type="number" name="anualSaving" required>
-            <br>
-            <label for="tasa">Tasa para el calculo:</label>
-            <input type="number" step="any" name="tasa" required>
-            <label for="taxes">Tasa de impuesto a descontar:</label>
-            <input type="number" step="any" name="taxes" required>
-            
-            <input id="letsGo" type="button" name="calculate" value="Calcular">
-            
+            <form id="mainData">
+                <label for="name">Nombre:</label>
+                <input type="text" name="name">
+                <br>
+                <label for="age">Edad:</label>
+                <input type="number" name="age" value="" required/>
+                <br>
+                <label for="saving">¿cuanto dinero tienes ahorrado?</label>
+                <input type="number" name="saving" value="" step="any" required>
+                <br>
+                <label for="montlySaving">¿cuanto puedes ahorrar mensualmente?</label>
+                <input type="number" name="montlySaving" step="any" required>
+                <br>
+                <label for="working">¿Cuantos años estimas trabajar?</label>
+                <input type="number" name="working" required>
+                <br>
+                <label for="anualSaving">¿Puedes dar una aportanci&oacuten a fin de año (cuanto)?</label>
+                <input type="number" name="anualSaving" required>
+                <br>
+                <label for="tasa">Tasa de rendimiento:</label>
+                <input type="number" step="any" name="tasa" required>
+                <label for="taxes">Impuestos (ISR):</label>
+                <input type="number" step="any" name="taxes" required>
+                <label for="inflation">Inflación:</label>
+                <input type="number" id="inflacion" value="0" required>
 
-        </form>
-
+                <input id="letsGo" type="button" name="calculate" value="Calcular">
 
 
+            </form>
 
-    </div>
 
-     <div id="result" class="shadow">
 
-        <div class="year center">
 
         </div>
 
-        <div class="montly center">
+        <div id="result" class="shadow">
+
+            <div class="year center">
+
+            </div>
+
+            <div class="montly center">
+
+            </div>
 
         </div>
 
     </div>
-
-</div>
 
     <script>
     $(document).ready(function(){
 
-        $('#letsGo').click(function() {
-        
-        SIM.calculate();
-        });
+        $('#letsGo').click(function() {SIM.calculate();});
+
+        // General
+    //$('#w2int').w2field('int', { autoFormat: false });
+    //$('#w2float').w2field('float',{ precision: 3 });
+    //$('#w2hex').w2field('hex');
+    //$('.w2ui-field > input').w2field('color');
+    //$('.w2ui-field > input').w2field('money',{ moneySymbol: '$' });
+        //$('#inflacion').w2field('percent',{ precision: 2, min: 0, max: 100 });
+
+    
 
     });     
 </script>
