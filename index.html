@@ -46,8 +46,24 @@
                 <label for="inflation">Inflación:</label>
                 <input type="number" id="inflacion" value="0" required>
 
-                <input id="letsGo" type="button" name="calculate" value="Calcular">
+                <label for="month">Comenzar a partir:</label>
+                <select name="month" id="month">
+                    <option value="1" default>Enero</option>
+                    <option value="2">Ferbrero</option>
+                    <option value="3">Marzo</option>
+                    <option value="4">Abril</option>
+                    <option value="5">Mayo</option>
+                    <option value="6">Junio</option>
+                    <option value="7">Julio</option>
+                    <option value="8">Agosto</option>
+                    <option value="9">Septiembre</option>
+                    <option value="10">Octubre</option>
+                    <option value="11">Noviembre</option>
+                    <option value="12">Diciembre</option>
+                </select>
 
+                <input id="letsGo" type="button" name="calculate" value="Calcular">
+                <!--<input id="reset" type="button" name="reset" value="Reiniciar">-->
 
             </form>
 
@@ -58,11 +74,17 @@
 
         <div id="result" class="shadow">
 
-            <div class="year center">
+            
+            
 
+            <div class="year center">
+                <div id="anualGrid" style="height: 350px;"></div>
             </div>
 
-            <div class="montly center">
+            
+            
+            <div class="center" style="width: 65%;">
+                <div id="monthlyGrid" style="width: 100%; height: 350px;"></div>
 
             </div>
 
@@ -74,6 +96,8 @@
     $(document).ready(function(){
 
         $('#letsGo').click(function() {SIM.calculate();});
+
+        /*$('#reset').click(function() {SIM.reset();});*/
 
         // General
     //$('#w2int').w2field('int', { autoFormat: false });
