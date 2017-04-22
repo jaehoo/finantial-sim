@@ -1,0 +1,262 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<jpa:entity-mappings xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:java="http://jcp.org/en/jsr/detail?id=270" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:jpa="http://java.sun.com/xml/ns/persistence/orm" v="4.1.1" rws="_14928203239272" Pws="_14928203239272" cws="_14928203239272" sm="false" xs="false" id="_14928203239261" xsi:schemaLocation="http://java.sun.com/xml/ns/persistence/orm orm_2_1.xsd">
+    <jpa:entity xre="false" compositePrimaryKeyClass="VehiclePK" abs="false" class="Vehicle" v="true" m="false" rootElement="_14928203239261" id="_1492820345169">
+        <jpa:ts e="true"/>
+        <jpa:hc e="true"/>
+        <jpa:eq e="true"/>
+        <jpa:ath>jasanchez</jpa:ath>
+        <jpa:attributes>
+            <jpa:basic attribute-type="String" v="true" name="name" id="_14928203633445">
+                <jpa:bv/>
+                <jpa:kbv/>
+                <jpa:vbv/>
+            </jpa:basic>
+            <jpa:basic attribute-type="double" v="true" name="investAmount" id="_14928203983766">
+                <jpa:bv/>
+                <jpa:kbv/>
+                <jpa:vbv/>
+            </jpa:basic>
+            <jpa:basic attribute-type="double" v="true" name="currAmount" id="_149282077847815">
+                <jpa:bv/>
+                <jpa:kbv/>
+                <jpa:vbv/>
+            </jpa:basic>
+            <jpa:basic attribute-type="double" v="true" name="rate" id="_14928204848008">
+                <jpa:bv/>
+                <jpa:kbv/>
+                <jpa:vbv/>
+            </jpa:basic>
+            <jpa:basic attribute-type="int" v="true" name="term" id="_14928204314367">
+                <jpa:bv/>
+                <jpa:kbv/>
+                <jpa:vbv/>
+            </jpa:basic>
+            <jpa:basic attribute-type="double" v="true" name="purchasePrice" id="_149282063979612">
+                <jpa:bv/>
+                <jpa:kbv/>
+                <jpa:vbv/>
+            </jpa:basic>
+            <jpa:basic attribute-type="int" v="true" name="nutitles" id="_149282083807016">
+                <jpa:bv/>
+                <jpa:kbv/>
+                <jpa:vbv/>
+            </jpa:basic>
+            <jpa:basic attribute-type="double" v="true" name="profit" id="_149282053426810">
+                <jpa:bv/>
+                <jpa:kbv/>
+                <jpa:vbv/>
+            </jpa:basic>
+            <jpa:basic attribute-type="java.sql.Date" v="true" name="investDate" id="_149282074842914">
+                <jpa:bv/>
+                <jpa:kbv/>
+                <jpa:vbv/>
+            </jpa:basic>
+            <jpa:basic attribute-type="java.sql.Date" v="true" name="expirationDate" id="_149282074018113">
+                <jpa:bv/>
+                <jpa:kbv/>
+                <jpa:vbv/>
+            </jpa:basic>
+            <jpa:basic attribute-type="double" v="true" name="roi" id="_149282059251411">
+                <jpa:bv/>
+                <jpa:kbv/>
+                <jpa:vbv/>
+            </jpa:basic>
+            <jpa:basic attribute-type="java.sql.Date" v="true" name="created" id="_14928205122419">
+                <jpa:bv/>
+                <jpa:kbv/>
+                <jpa:vbv/>
+            </jpa:basic>
+            <jpa:basic attribute-type="String" v="true" name="type" id="_149282227827325">
+                <jpa:bv/>
+                <jpa:kbv/>
+                <jpa:vbv/>
+            </jpa:basic>
+            <jpa:one-to-many orp="false" collection-type="java.util.List" connected-entity-id="_1492821314484" connected-attribute-id="_149282516971837" v="true" name="backgrounds" id="_149282516971838">
+                <jpa:bv/>
+                <jpa:kbv/>
+                <jpa:vbv/>
+            </jpa:one-to-many>
+            <jpa:one-to-many orp="false" own="true" collection-type="java.util.List" connected-entity-id="_1492824850646" v="true" name="movements" id="_149282542653039">
+                <jpa:bv/>
+                <jpa:kbv/>
+                <jpa:vbv/>
+            </jpa:one-to-many>
+            <jpa:id attribute-type="Long" v="true" name="id" id="_14928203452653">
+                <jpa:bv/>
+                <jpa:kbv/>
+                <jpa:vbv/>
+                <jpa:generated-value strategy="AUTO"/>
+            </jpa:id>
+        </jpa:attributes>
+        <jpa:nq e="false" name="Vehicle.findAll">
+            <jpa:query>Select e from Vehicle e</jpa:query>
+        </jpa:nq>
+        <jpa:nq e="false" name="Vehicle.findByName">
+            <jpa:query>Select e from Vehicle e where e.name=:name</jpa:query>
+        </jpa:nq>
+        <jpa:nq e="false" name="Vehicle.findByInvestAmount">
+            <jpa:query>Select v from Vehicle v where v.investAmount=:investAmount</jpa:query>
+        </jpa:nq>
+        <jpa:nq e="false" name="Vehicle.findByTerm">
+            <jpa:query>Select v from Vehicle v where v.term=:term</jpa:query>
+        </jpa:nq>
+        <jpa:nq e="false" name="Vehicle.findByRate">
+            <jpa:query>Select v from Vehicle v where v.rate=:rate</jpa:query>
+        </jpa:nq>
+        <jpa:nq e="false" name="Vehicle.findByCreated">
+            <jpa:query>Select v from Vehicle v where v.created=:created</jpa:query>
+        </jpa:nq>
+        <jpa:nq e="false" name="Vehicle.findByProfit">
+            <jpa:query>Select v from Vehicle v where v.profit=:profit</jpa:query>
+        </jpa:nq>
+        <jpa:nq e="false" name="Vehicle.findByRoi">
+            <jpa:query>Select v from Vehicle v where v.roi=:roi</jpa:query>
+        </jpa:nq>
+        <jpa:nq e="false" name="Vehicle.findByPurchasePrice">
+            <jpa:query>Select v from Vehicle v where v.purchasePrice=:purchasePrice</jpa:query>
+        </jpa:nq>
+        <jpa:nq e="false" name="Vehicle.findByExpirationDate">
+            <jpa:query>Select v from Vehicle v where v.expirationDate=:expirationDate</jpa:query>
+        </jpa:nq>
+        <jpa:nq e="false" name="Vehicle.findByInvestDate">
+            <jpa:query>Select v from Vehicle v where v.investDate=:investDate</jpa:query>
+        </jpa:nq>
+        <jpa:nq e="false" name="Vehicle.findByCurrAmount">
+            <jpa:query>Select v from Vehicle v where v.currAmount=:currAmount</jpa:query>
+        </jpa:nq>
+        <jpa:nq e="false" name="Vehicle.findByNutitles">
+            <jpa:query>Select v from Vehicle v where v.nutitles=:nutitles</jpa:query>
+        </jpa:nq>
+        <jpa:nq e="false" name="Vehicle.findByType">
+            <jpa:query>Select v from Vehicle v where v.type=:type</jpa:query>
+        </jpa:nq>
+        <jpa:el/>
+    </jpa:entity>
+    <jpa:entity xre="false" compositePrimaryKeyClass="VehicleHistoryPK" abs="false" class="VehicleHistory" v="true" m="false" rootElement="_14928203239261" id="_1492821314484">
+        <jpa:ts e="true"/>
+        <jpa:hc e="true"/>
+        <jpa:eq e="true"/>
+        <jpa:ath>jasanchez</jpa:ath>
+        <jpa:attributes>
+            <jpa:basic attribute-type="String" v="true" name="amount" id="_149282170011622">
+                <jpa:bv/>
+                <jpa:kbv/>
+                <jpa:vbv/>
+            </jpa:basic>
+            <jpa:basic attribute-type="String" v="true" name="profit" id="_149282140552420">
+                <jpa:bv/>
+                <jpa:kbv/>
+                <jpa:vbv/>
+            </jpa:basic>
+            <jpa:basic attribute-type="String" v="true" name="registered" id="_149282162251821">
+                <jpa:bv/>
+                <jpa:kbv/>
+                <jpa:vbv/>
+            </jpa:basic>
+            <jpa:basic attribute-type="String" v="true" name="rate" id="_149282219998424">
+                <jpa:bv/>
+                <jpa:kbv/>
+                <jpa:vbv/>
+            </jpa:basic>
+            <jpa:many-to-one primaryKey="false" connected-entity-id="_1492820345169" connected-attribute-id="_149282516971838" v="true" name="vehicle" id="_149282516971837">
+                <jpa:bv/>
+                <jpa:kbv/>
+                <jpa:vbv/>
+            </jpa:many-to-one>
+            <jpa:id attribute-type="Long" v="true" name="id" id="_149282131448617">
+                <jpa:bv/>
+                <jpa:kbv/>
+                <jpa:vbv/>
+                <jpa:generated-value strategy="AUTO"/>
+            </jpa:id>
+        </jpa:attributes>
+        <jpa:nq e="false" name="VehicleHistory.findAll">
+            <jpa:query>Select e from VehicleHistory e</jpa:query>
+        </jpa:nq>
+        <jpa:nq e="false" name="VehicleHistory.findByProfit">
+            <jpa:query>Select h from VehicleHistory h where h.profit=:profit</jpa:query>
+        </jpa:nq>
+        <jpa:nq e="false" name="VehicleHistory.findByRegistered">
+            <jpa:query>Select h from VehicleHistory h where h.registered=:registered</jpa:query>
+        </jpa:nq>
+        <jpa:nq e="false" name="VehicleHistory.findByAmount">
+            <jpa:query>Select h from VehicleHistory h where h.amount=:amount</jpa:query>
+        </jpa:nq>
+        <jpa:nq e="false" name="VehicleHistory.findByRate">
+            <jpa:query>Select v from VehicleHistory v where v.rate=:rate</jpa:query>
+        </jpa:nq>
+        <jpa:el/>
+    </jpa:entity>
+    <jpa:entity xre="false" compositePrimaryKeyClass="MovementsPK" abs="false" class="Movements" v="true" m="false" rootElement="_14928203239261" id="_1492824850646">
+        <jpa:ts e="true"/>
+        <jpa:hc e="true"/>
+        <jpa:eq e="true"/>
+        <jpa:ath>jasanchez</jpa:ath>
+        <jpa:attributes>
+            <jpa:basic attribute-type="String" v="true" name="type" id="_149282486162528">
+                <jpa:bv/>
+                <jpa:kbv/>
+                <jpa:vbv/>
+            </jpa:basic>
+            <jpa:basic attribute-type="String" v="true" name="amount" id="_149282486962129">
+                <jpa:bv/>
+                <jpa:kbv/>
+                <jpa:vbv/>
+            </jpa:basic>
+            <jpa:basic attribute-type="String" v="true" name="date" id="_149282487823030">
+                <jpa:bv/>
+                <jpa:kbv/>
+                <jpa:vbv/>
+            </jpa:basic>
+            <jpa:basic attribute-type="String" v="true" name="description" id="_149282488438831">
+                <jpa:bv/>
+                <jpa:kbv/>
+                <jpa:vbv/>
+            </jpa:basic>
+            <jpa:id attribute-type="Long" v="true" name="id" id="_149282485064826">
+                <jpa:bv/>
+                <jpa:kbv/>
+                <jpa:vbv/>
+                <jpa:generated-value strategy="AUTO"/>
+            </jpa:id>
+        </jpa:attributes>
+        <jpa:nq e="false" name="Movements.findAll">
+            <jpa:query>Select e from Movements e</jpa:query>
+        </jpa:nq>
+        <jpa:nq e="false" name="Movements.findByType">
+            <jpa:query>Select m from Movements m where m.type=:type</jpa:query>
+        </jpa:nq>
+        <jpa:nq e="false" name="Movements.findByAmount">
+            <jpa:query>Select m from Movements m where m.amount=:amount</jpa:query>
+        </jpa:nq>
+        <jpa:nq e="false" name="Movements.findByDate">
+            <jpa:query>Select m from Movements m where m.date=:date</jpa:query>
+        </jpa:nq>
+        <jpa:nq e="false" name="Movements.findByDescription">
+            <jpa:query>Select m from Movements m where m.description=:description</jpa:query>
+        </jpa:nq>
+        <jpa:el/>
+    </jpa:entity>
+    <jpa:snp loc="BEFORE_PACKAGE" e="true">/**
+ * This file was generated by the Jeddict
+ */</jpa:snp>
+    <jpa:c>
+        <ct>java.util.List</ct>
+        <ct>java.util.Set</ct>
+        <ct>java.util.Map</ct>
+        <ct>java.util.Collection</ct>
+    </jpa:c>
+    <jpa:wsl>
+        <jpa:ws n="Main" id="_14928203239272">
+            <i ref="_1492824850646" x="370" y="553">
+                <el/>
+            </i>
+            <i ref="_1492820345169" x="77" y="96">
+                <el/>
+            </i>
+            <i ref="_1492821314484" x="356" y="132">
+                <el/>
+            </i>
+        </jpa:ws>
+    </jpa:wsl>
+</jpa:entity-mappings>
