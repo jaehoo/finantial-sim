@@ -1,0 +1,74 @@
+<div class="test">
+
+<p>
+  simulator works!
+</p>
+
+<md-card>
+  <form class="example-form">
+  <md-input-container class="example-full-width">
+    <input mdInput placeholder="Company (disabled)" disabled value="Google">
+  </md-input-container>
+
+  <table class="example-full-width" cellspacing="0"><tr>
+    <td><md-input-container class="example-full-width">
+      <input mdInput placeholder="First name">
+    </md-input-container></td>
+    <td><md-input-container class="example-full-width">
+      <input mdInput placeholder="Long Last Name That Will Be Truncated">
+    </md-input-container></td>
+  </tr></table>
+
+  <p>
+    <md-input-container class="example-full-width">
+      <textarea mdInput placeholder="Address">1600 Amphitheatre Pkwy</textarea>
+    </md-input-container>
+    <md-input-container class="example-full-width">
+      <textarea mdInput placeholder="Address 2"></textarea>
+    </md-input-container>
+  </p>
+
+  <table class="example-full-width" cellspacing="0"><tr>
+    <td><md-input-container class="example-full-width">
+      <input mdInput placeholder="City">
+    </md-input-container></td>
+    <td><md-input-container class="example-full-width">
+      <input mdInput placeholder="State">
+    </md-input-container></td>
+    <td><md-input-container class="example-full-width">
+      <input mdInput #postalCode maxlength="5" placeholder="Postal Code" value="94043">
+      <md-hint align="end">{{postalCode.value.length}} / 5</md-hint>
+    </md-input-container></td>
+  </tr></table>
+</form>
+</md-card>
+
+<md-toolbar color="primary">
+
+    <span>MyCompany</span>
+    <span class="example-spacer"></span>
+    <button md-button [mdMenuTriggerFor]="appMenu"><md-icon>menu</md-icon> Menu</button>
+    
+</md-toolbar>
+
+<md-menu #appMenu="mdMenu">
+  <button md-menu-item> Settings </button>
+  <button md-menu-item> Help </button>
+</md-menu>
+
+<md-card class="example-card" *ngFor="let data of (myData ? myData.slice(0,10): []); let i = index">
+
+  <img md-card-image src="{{ data.url }}">
+  <md-card-header>
+    <md-card-title>{{ data.title }}</md-card-title>
+  </md-card-header>
+
+  <md-card-actions>
+    <button md-button>LIKE</button>
+    <button md-button>SHARE</button>
+  </md-card-actions>
+  
+</md-card>
+
+</div>
+

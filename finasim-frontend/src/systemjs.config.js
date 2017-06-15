@@ -5,7 +5,10 @@
         'app': 'dist', // 'dist',
         'rxjs': 'node_modules/rxjs',
         '@angular': 'node_modules/@angular',
-        'angular-in-memory-web-api': 'npm:angular-in-memory-web-api/bundles/in-memory-web-api.umd.js'
+        'angular-in-memory-web-api': 'npm:angular-in-memory-web-api/bundles/in-memory-web-api.umd.js',
+        '@angular/animations/browser':'node_modules/@angular/animations/bundles/animations-browser.umd.js',
+        '@angular/platform-browser/animations': 'node_modules/@angular/platform-browser/bundles/platform-browser-animations.umd.js',
+        'hammerjs':'node_modules/hammerjs/hammer.js',
     };
 
     // packages tells the System loader how to load when no filename and/or no extension
@@ -24,6 +27,10 @@
         'testing',
         'router',
         'forms',
+        'http',
+        'animations',
+        'material',
+
     ];
 
     // Individual files (~300 requests):

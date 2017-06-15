@@ -3,9 +3,12 @@ import { BrowserModule } from '@angular/platform-browser';
 
 import { AppComponent }  from './app.component';
 import { SimulatorModule } from '../simulator/simulator.module'
+import 'hammerjs';
 
 @NgModule({
-  imports:      [ BrowserModule, SimulatorModule ],
+  imports:      [ 
+    BrowserModule, SimulatorModule
+         ],
   declarations: [ AppComponent ],
   bootstrap:    [ AppComponent ]
 })
