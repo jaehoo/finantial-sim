@@ -8,6 +8,7 @@ import { CustomMaterialModule } from '../custom-material/custom-material.module'
   imports: [
     CommonModule,
     CustomMaterialModule,
+    
   ],
   declarations: [SimulatorComponent],
   exports: [ SimulatorComponent ]

@@ -1,74 +1,156 @@
-<div class="test">
+<div class="formBody">
 
-<p>
-  simulator works!
-</p>
+  <div class="inputForm">
 
-<md-card>
-  <form class="example-form">
-  <md-input-container class="example-full-width">
-    <input mdInput placeholder="Company (disabled)" disabled value="Google">
-  </md-input-container>
 
-  <table class="example-full-width" cellspacing="0"><tr>
-    <td><md-input-container class="example-full-width">
-      <input mdInput placeholder="First name">
-    </md-input-container></td>
-    <td><md-input-container class="example-full-width">
-      <input mdInput placeholder="Long Last Name That Will Be Truncated">
-    </md-input-container></td>
-  </tr></table>
+    <md-card>
 
-  <p>
-    <md-input-container class="example-full-width">
-      <textarea mdInput placeholder="Address">1600 Amphitheatre Pkwy</textarea>
-    </md-input-container>
-    <md-input-container class="example-full-width">
-      <textarea mdInput placeholder="Address 2"></textarea>
-    </md-input-container>
-  </p>
+      <h3>Finantial Simulator</h3>
+      <form action="" class="sim-form">
 
-  <table class="example-full-width" cellspacing="0"><tr>
-    <td><md-input-container class="example-full-width">
-      <input mdInput placeholder="City">
-    </md-input-container></td>
-    <td><md-input-container class="example-full-width">
-      <input mdInput placeholder="State">
-    </md-input-container></td>
-    <td><md-input-container class="example-full-width">
-      <input mdInput #postalCode maxlength="5" placeholder="Postal Code" value="94043">
-      <md-hint align="end">{{postalCode.value.length}} / 5</md-hint>
-    </md-input-container></td>
-  </tr></table>
-</form>
-</md-card>
+        <md-input-container class="example-full-width">
+          <input mdInput placeholder="Nombre">
+        </md-input-container>
 
-<md-toolbar color="primary">
+        <md-input-container class="example-full-width">
+          <input mdInput placeholder="Edad" type="number">
+        </md-input-container>
 
-    <span>MyCompany</span>
-    <span class="example-spacer"></span>
-    <button md-button [mdMenuTriggerFor]="appMenu"><md-icon>menu</md-icon> Menu</button>
-    
-</md-toolbar>
+        <md-input-container class="example-full-width">
+          <input mdInput placeholder="¿Cuanto dinero tienes ahorrado?" type="number">
+        </md-input-container>
 
-<md-menu #appMenu="mdMenu">
-  <button md-menu-item> Settings </button>
-  <button md-menu-item> Help </button>
-</md-menu>
+        <md-input-container class="example-full-width">
+          <input mdInput placeholder="¿Cuanto puedes ahorrar mensualmente?" type="number">
+        </md-input-container>
 
-<md-card class="example-card" *ngFor="let data of (myData ? myData.slice(0,10): []); let i = index">
+        <md-input-container class="example-full-width">
+          <input mdInput placeholder="¿Cuantos años estimas trabajar?" type="number">
+        </md-input-container>
 
-  <img md-card-image src="{{ data.url }}">
-  <md-card-header>
-    <md-card-title>{{ data.title }}</md-card-title>
-  </md-card-header>
+        <md-input-container class="example-full-width">
+          <input mdInput placeholder="¿Puedes dar una aportación a fin de año?" type="number">
+        </md-input-container>
 
-  <md-card-actions>
-    <button md-button>LIKE</button>
-    <button md-button>SHARE</button>
-  </md-card-actions>
-  
-</md-card>
+
+        <md-input-container>
+          <input mdInput placeholder="Tasa de rendimiento" type="number">
+        </md-input-container>
+
+
+        <md-input-container>
+          <input mdInput placeholder="Impuestos (ISR)" type="number">
+        </md-input-container>
+
+
+        <md-input-container>
+          <input mdInput placeholder="Inlfación" type="number">
+        </md-input-container>
+
+        <md-select placeholder="Comenzar en el mes:" [(ngModel)]="selectedValue" name="months">
+          <md-option *ngFor="let month of months" [value]="month.value">
+            {{month.viewValue}}
+          </md-option>
+        </md-select>
+
+      </form>
+      <div class="formMenu">
+        <a md-button routerLink=".">Agregar</a>
+        <a md-button routerLink=".">Calcular</a>
+
+        <button md-raised-button>Agregar</button>
+        <button md-raised-button>Calcular</button>
+        <button md-fab><md-icon>check</md-icon></button>
+        <!--<p> Selected value: {{selectedValue}} </p>-->
+      </div>
+
+
+    </md-card>
+
+
+
+    <md-card>
+      <form class="example-form">
+        <md-input-container class="example-full-width">
+          <input mdInput placeholder="Company (disabled)" disabled value="Google">
+        </md-input-container>
+
+        <table class="example-full-width" cellspacing="0">
+          <tr>
+            <td>
+              <md-input-container class="example-full-width">
+                <input mdInput placeholder="First name">
+              </md-input-container>
+            </td>
+            <td>
+              <md-input-container class="example-full-width">
+                <input mdInput placeholder="Long Last Name That Will Be Truncated">
+              </md-input-container>
+            </td>
+          </tr>
+        </table>
+
+        <p>
+          <md-input-container class="example-full-width">
+            <textarea mdInput placeholder="Address">1600 Amphitheatre Pkwy</textarea>
+          </md-input-container>
+          <md-input-container class="example-full-width">
+            <textarea mdInput placeholder="Address 2"></textarea>
+          </md-input-container>
+        </p>
+
+        <table class="example-full-width" cellspacing="0">
+          <tr>
+            <td>
+              <md-input-container class="example-full-width">
+                <input mdInput placeholder="City">
+              </md-input-container>
+            </td>
+            <td>
+              <md-input-container class="example-full-width">
+                <input mdInput placeholder="State">
+              </md-input-container>
+            </td>
+            <td>
+              <md-input-container class="example-full-width">
+                <input mdInput #postalCode maxlength="5" placeholder="Postal Code" value="94043">
+                <md-hint align="end">{{postalCode.value.length}} / 5</md-hint>
+              </md-input-container>
+            </td>
+          </tr>
+        </table>
+      </form>
+    </md-card>
+
+    <md-toolbar color="primary">
+
+      <span>MyCompany</span>
+      <span class="example-spacer"></span>
+      <button md-button [mdMenuTriggerFor]="appMenu"><md-icon>menu</md-icon> Menu</button>
+
+    </md-toolbar>
+
+    <md-menu #appMenu="mdMenu">
+      <button md-menu-item> Settings </button>
+      <button md-menu-item> Help </button>
+    </md-menu>
+
+    <md-card class="example-card" *ngFor="let data of (myData ? myData.slice(0,10): []); let i = index">
+
+      <img md-card-image src="{{ data.url }}">
+      <md-card-header>
+        <md-card-title>{{ data.title }}</md-card-title>
+      </md-card-header>
+
+      <md-card-actions>
+        <button md-button>LIKE</button>
+        <button md-button>SHARE</button>
+      </md-card-actions>
+
+    </md-card>
+
+  </div>
+
+
 
 </div>
-

@@ -8,9 +8,16 @@ import { HttpModule } from '@angular/http';
 
 //import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import {NoopAnimationsModule} from '@angular/platform-browser/animations';
-import { MdButtonModule, MdCardModule, MdMenuModule,
-   MdToolbarModule, MdIconModule,
-  MdInputModule } from '@angular/material';
+import { 
+  MdButtonModule,
+  MdCardModule,
+  MdMenuModule,
+  MdToolbarModule,
+  MdIconModule,
+  MdInputModule,
+  MdSelectModule,
+  MdOption 
+ } from '@angular/material';
   
 
 
@@ -27,7 +34,9 @@ import { MdButtonModule, MdCardModule, MdMenuModule,
     MdCardModule,
     MdToolbarModule,
     MdIconModule,
-    MdInputModule
+    MdInputModule,
+    MdSelectModule,
+    
   ],
   declarations: [],
   exports: [
@@ -37,6 +46,9 @@ import { MdButtonModule, MdCardModule, MdMenuModule,
     MdToolbarModule,
     MdIconModule,
     MdInputModule,
+    MdSelectModule,
+    FormsModule,
+    
     ]
 })
 export class CustomMaterialModule { }
