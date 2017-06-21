@@ -9,9 +9,10 @@
       <form action="" class="sim-form">
 
         <md-input-container class="example-full-width">
-          <input mdInput placeholder="Nombre">
+          
+          <input mdInput [(ngModel)]="test" placeholder="Nombre" name="name">
         </md-input-container>
-
+        
         <md-input-container class="example-full-width">
           <input mdInput placeholder="Edad" type="number">
         </md-input-container>
@@ -55,15 +56,15 @@
 
       </form>
       <div class="formMenu">
-        <a md-button routerLink=".">Agregar</a>
+        <a md-button routerLink="." (click)="sayHello()">Agregar</a>
         <a md-button routerLink=".">Calcular</a>
 
-        <button md-raised-button>Agregar</button>
+        <button md-raised-button >Agregar</button>
         <button md-raised-button>Calcular</button>
         <button md-fab><md-icon>check</md-icon></button>
         <!--<p> Selected value: {{selectedValue}} </p>-->
       </div>
-
+      <h1>{{test}}</h1>
 
     </md-card>
 
@@ -74,6 +75,8 @@
         <md-input-container class="example-full-width">
           <input mdInput placeholder="Company (disabled)" disabled value="Google">
         </md-input-container>
+
+        
 
         <table class="example-full-width" cellspacing="0">
           <tr>

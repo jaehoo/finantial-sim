@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
-
 import { Http } from '@angular/http';
+import {NgForm} from '@angular/forms';
+
+import { FinantialPlan } from '../model/finantial-plan';
 
 @Component({
   selector: 'app-simulator',
@@ -11,6 +13,11 @@ export class SimulatorComponent implements OnInit {
 
   myData: Array<any>;
   selectedValue: string;
+  test = 'test';
+
+  private plan : FinantialPlan;
+  private planing?: Array<FinantialPlan>;
+
 
   months = [
     {value: '1', viewValue: 'Enero'},
@@ -37,7 +44,21 @@ export class SimulatorComponent implements OnInit {
   }
 
   ngOnInit() {
+    this.planing = new Array<FinantialPlan>();
   }
 
 
+  addToPlan(plan: FinantialPlan){
+    this.planing.push(plan);
+    
+  }
+
+
+  sayHello(){
+      this.test = 'hello!';
+
+//      console.info(this.test);
+
+
+  }
 }
