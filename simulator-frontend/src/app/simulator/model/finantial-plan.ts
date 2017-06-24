@@ -1,6 +1,6 @@
 export class FinantialPlan {
 
-    public name: string;
+    name: string;
     public age: number;
     public yearsToWork: number;
     public saving: number;

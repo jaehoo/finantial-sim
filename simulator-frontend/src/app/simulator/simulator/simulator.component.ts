@@ -45,17 +45,28 @@ export class SimulatorComponent implements OnInit {
 
   ngOnInit() {
     this.planing = new Array<FinantialPlan>();
+    this.plan = new FinantialPlan();
+
   }
 
 
   addToPlan(plan: FinantialPlan){
-    this.planing.push(plan);
+
+    //Validate if fields are completed
+
+    console.info(plan);
+    this.test = plan.name;
+
+
+
+    //this.planing.push(plan);
     
   }
 
 
   sayHello(){
       this.test = 'hello!';
+      
 
 //      console.info(this.test);
 
